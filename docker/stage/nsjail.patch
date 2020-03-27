@@ -1,17 +1,16 @@
 diff --git Makefile Makefile
-index 2796453..30085ff 100644
+index 2796453..085b12f 100644
 --- Makefile
 +++ Makefile
-@@ -29,7 +29,8 @@ COMMON_FLAGS += -O2 -c \
+@@ -28,7 +28,7 @@ COMMON_FLAGS += -O2 -c \
+ 	-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 \
  	-fPIE \
  	-Wformat -Wformat-security -Wno-format-nonliteral \
- 	-Wall -Wextra -Werror \
--	-Ikafel/include
-+	-Ikafel/include \
-+	-Werror=deprecated-declarations
+-	-Wall -Wextra -Werror \
++	-Wall -Wextra \
+ 	-Ikafel/include
  
  CXXFLAGS += $(COMMON_FLAGS) $(shell pkg-config --cflags protobuf) \
- 	-std=c++11 -fno-exceptions -Wno-unused -Wno-unused-parameter
 diff --git user.cc user.cc
 index 06c221a..7ebcb2d 100644
 --- user.cc
