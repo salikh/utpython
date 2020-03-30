@@ -1,8 +1,6 @@
 load(
     "@prog_edu_assistant//exercises:defs.bzl",
-    "assignment_notebook",
-    "autograder_tar",
-    "student_tar",
+    "assignment_notebook", "autograder_tar", "student_tar",
 )
 
 assignment_notebook(
@@ -12,6 +10,7 @@ assignment_notebook(
 
 notebooks = [
     ":test-notebook",
+    "//1:1-1",
 ]
 
 autograder_tar(
