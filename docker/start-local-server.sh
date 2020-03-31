@@ -10,9 +10,10 @@ set -ex
 cd "$DIR/.."
 bazel build ...
 cd "$DIR"
+export DOCKER_IMAGE="${DOCKER_IMAGE:-utpython-autograder}
 ./build-docker-image.sh
 # Note: the following flags are appended to ENTRYPOINT defined in the Dockerfile.
-docker run -p 8000:8000/tcp --rm --name combined combined:latest \
+docker run -p 8000:8000/tcp --rm --name "${DOCKER_IMAGE}" "${DOCKER_IMAGE}":latest \
   --logtostderr \
   --v=5 \
   --disable_cleanup \

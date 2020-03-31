@@ -23,4 +23,4 @@ set -e
 @execute tar xvfi bazel-bin/autograder_tar.tar -C "$STAGE"
 
 @execute cd "$DIR"
-@execute docker build stage -f stage/Dockerfile -t combined
+@execute docker build stage -f stage/Dockerfile -t ${DOCKER_IMAGE:-utpython-autograder}
