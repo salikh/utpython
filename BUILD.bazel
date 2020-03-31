@@ -6,6 +6,7 @@ load(
 assignment_notebook(
     name = "test-notebook",
     src = "test-notebook.ipynb",
+    preamble = "preamble.py",
 )
 
 notebooks = [
